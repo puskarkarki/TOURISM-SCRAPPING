@@ -34,4 +34,7 @@ for information in page_header.find_all("p"):
     with open('trekking.csv', 'w') as file:
         file.write(str(output))
 
+    with open('trekking.txt', 'w') as file:
+        file.write(str(output))
+
 
