@@ -22,10 +22,15 @@ for link in page_header.find_all('a', href=True):
     links.append(link['href'])
 print(links)
 
+images = []
+for img in page_header.findAll('img'):
+    images.append(img.get('src'))
+print(images)
+
 information =''
 for information in page_header.find_all("p"):
     print(information.get_text(strip=True, separator=''))
-    output = {'title': title, 'title_description': title_description, 'header_title':header_title,'links':links, 'information': information}
+    output = {'title': title, 'title_description': title_description, 'header_title':header_title,'links':links, 'images_links':images, 'information': information}
     with open('trekking.csv', 'w') as file:
         file.write(str(output))
 
